@@ -15,7 +15,7 @@
   },
 
   // Run this command *after* the codespace is created
-  "postCreateCommand": "pip install -r .devcontainer/requirements.txt",
+  "postCreateCommand": "pip install -r .devcontainer/requirements.txt && nbdime config-git --enable --global",
 
   // Forward the Jupyter port if you run `jupyter lab`
   "forwardPorts": [8888],
