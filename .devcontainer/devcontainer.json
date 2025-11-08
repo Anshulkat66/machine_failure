@@ -1,0 +1,27 @@
+{
+  "name": "Python 3 Data Science",
+  // Start from an image that already has Python, Conda, and common tools
+  "image": "mcr.microsoft.com/devcontainers/miniconda:0-3",
+
+  "customizations": {
+    "vscode": {
+      // Automatically install these extensions for everyone
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "ms-vsliveshare.vsliveshare"
+      ]
+    }
+  },
+
+  // Run this command *after* the codespace is created
+  "postCreateCommand": "pip install -r .devcontainer/requirements.txt",
+
+  // Forward the Jupyter port if you run `jupyter lab`
+  "forwardPorts": [8888],
+
+  // Tell VS Code to use the Python environment we're installing to
+  "settings": {
+    "python.defaultInterpreterPath": "/opt/conda/bin/python"
+  }
+}
