@@ -2,6 +2,9 @@
   "name": "Python 3 Data Science",
   // Start from an image that already has Python, Conda, and common tools
   "image": "mcr.microsoft.com/devcontainers/miniconda:0-3",
+  "features": {
+    "ghcr.io/devcontainers/features/git-lfs:1": {}
+  },
 
   "customizations": {
     "vscode": {
@@ -10,7 +13,10 @@
         "ms-python.python",
         "ms-toolsai.jupyter",
         "ms-vsliveshare.vsliveshare"
-      ]
+      ],
+      "settings": {
+    "python.defaultInterpreterPath": "/opt/conda/bin/python"
+  }
     }
   },
 
@@ -18,10 +24,8 @@
   "postCreateCommand": "pip install -r .devcontainer/requirements.txt && nbdime config-git --enable --global",
 
   // Forward the Jupyter port if you run `jupyter lab`
-  "forwardPorts": [8888],
+  "forwardPorts": [8888]
 
   // Tell VS Code to use the Python environment we're installing to
-  "settings": {
-    "python.defaultInterpreterPath": "/opt/conda/bin/python"
-  }
+
 }
